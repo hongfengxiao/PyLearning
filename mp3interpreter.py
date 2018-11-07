@@ -1,8 +1,8 @@
 # -*- coding: UTF-8 -*-
 
 # file = open("gamePlay.mp3", 'rb')
-# file = open("贝瓦儿歌-小星星.mp3", 'rb')
-file = open("Charlie Puth-The Moment.mp3", 'rb')
+file = open("贝瓦儿歌-小星星.mp3", 'rb')
+# file = open("Charlie Puth-The Moment.mp3", 'rb')
 # file = open("Thomas Greenberg - Easy Breeze.mp3", 'rb')
 # file = open("原来.mp3", 'rb')
 data = file.read()
@@ -31,6 +31,7 @@ def TIT2():
 
     if "TIT2" in data.decode("UTF-8", "ignore"):
         count = data[posstion + 4:posstion + 8]
+        print(count.decode("UTF-8", "ignore"))
         sums = (count[0]) * 0x100000000 + count[1] * 0x10000 + count[2] * 0x100 + count[3]
         print("sums类型：", type(sums))
         content = data[(posstion + 10):(posstion + 10 + sums)]
